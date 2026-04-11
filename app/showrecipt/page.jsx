@@ -63,7 +63,7 @@ export default function ReceiptsPage() {
       </form>
 
       {/* Table */}
-      <table className="mt-6 border w-full text-white overflow-x-auto">
+      <div className="overflow-x-auto"><table className="mt-6 border w-full text-white ">
         <thead>
           <tr className="border">
             <th className="border p-2">Merchant</th>
@@ -106,7 +106,7 @@ export default function ReceiptsPage() {
             <tr><td colSpan={7} className="text-center p-4 text-gray-400">No receipts found</td></tr>
           )}
         </tbody>
-      </table>
+      </table></div>
     </div>
   )
 }
