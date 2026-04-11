@@ -102,7 +102,7 @@ export default function History() {
                 <div className="bg-blue-500 text-white p-2 px-4 rounded-xl w-fit ml-auto">
                   <p>{c.userMessage}</p>
                   <p className="text-xs text-blue-100 mt-1 text-right">
-                    {/* ✅ FIX 1 again: createAt not createdAt */}
+                   
                     {formatDate(c.createAt)}
                   </p>
                 </div>
