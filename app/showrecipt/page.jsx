@@ -63,7 +63,7 @@ export default function ReceiptsPage() {
       </form>
 
       {/* Table */}
-      <table className="mt-6 border w-full text-white">
+      <table className="mt-6 border w-full text-white overflow-x-auto">
         <thead>
           <tr className="border">
             <th className="border p-2">Merchant</th>
