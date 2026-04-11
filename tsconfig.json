@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
+, "app/api/chat/route.jsx", "app/api/plantchatbot/route.js", "lib/sync-user.js", "app/api/uploadrecipt/route.js", "app/api/uploadrecipt/route.jsx", "app/api/uploadrecipt/route.js", "app/Recipt-scanner/scanner/page.jsx", "app/PlantDiseaseDector/page.jsx"  ],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,95 @@
+"use client";
+import React, { useState } from "react";
+import { InfoIcon, ScanSearch, Store, Wheat, MessageCircleMore , Contact2,Receipt  } from "lucide-react";
+import Link from "next/link";
+import { Show, SignUpButton, UserButton } from "@clerk/nextjs";
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <nav className="bg-orange-500 w-full px-6">
+      <div className="flex justify-between items-center h-[9vh]">
+
+        <div className="flex items-center gap-2">
+          <Wheat className="w-10 h-10 text-amber-200" />
+          <span className="text-xl font-bold">Anna Ratnam</span>
+        </div>
+        <button
+          className="md:hidden text-white"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+
+
+        <div className="hidden md:flex items-center gap-4">
+          <Link href="/Chat" className="flex items-center text-sm hover:text-blue-500">
+            <MessageCircleMore  className="h-4 w-4 mr-1" /> Chat
+          </Link>
+          <Link href="/contact" className="flex items-center text-sm hover:text-blue-500">
+            <Contact2 className="h-4 w-4 mr-1" /> Contact
+          </Link>
+
+
+          <Show when="signed-out">
+            <SignUpButton forceRedirectUrl="/home">
+              <button className="bg-[#6c47ff] text-white rounded-full text-sm h-10 px-4 cursor-pointer">
+                Sign Up
+              </button>
+            </SignUpButton>
+          </Show>
+
+          <Show when="signed-in">
+            <Link href="/Mandi" className="flex items-center text-sm hover:text-blue-500">
+              <Store className="h-4 w-4 mr-1" /> Mandi
+            </Link>
+            <Link href="/PlantDiseaseDector" className="flex items-center text-sm hover:text-blue-500">
+              <ScanSearch className="h-4 w-4 mr-1" /> Plant Disease
+            </Link>
+            <Link href="/showrecipt" className="flex items-center text-sm hover:text-blue-500"><Receipt className="h-4 w-4 mr-1"/>Receipt</Link>
+            <UserButton />
+          </Show>
+        </div>
+      </div>
+
+
+      {isOpen && (
+        <div className="md:hidden flex flex-col gap-3 mt-3 text-white">
+          <Link href="/Chat" className="flex items-center hover:text-blue-200">
+            <MessageCircleMore className="h-4 w-4 mr-1" /> Chat
+          </Link>
+          <Link href="/contact" className="flex items-center hover:text-blue-200">
+            <Contact2 className="h-4 w-4 mr-1" /> Contact
+          </Link>
+
+
+          <Show when="signed-out">
+            <SignUpButton forceRedirectUrl="/home">
+              <button className="bg-[#6c47ff] text-white rounded-full text-sm h-10 px-4 cursor-pointer">
+                Sign Up
+              </button>
+            </SignUpButton>
+          </Show>
+
+          <Show when="signed-in">
+            <Link href="/Mandi" className="flex items-center hover:text-blue-200">
+              <Store className="h-4 w-4 mr-1" /> Mandi
+            </Link>
+            <Link href="/PlantDiseaseDector" className="flex items-center hover:text-blue-200">
+              <ScanSearch className="h-4 w-4 mr-1" /> Plant Disease
+            </Link>
+            <Link href="/showrecipt" className="flex items-center text-sm hover:text-blue-500">
+            <Receipt className="h-4 w-4 mr-1"/>Receipt</Link>
+            <UserButton />
+          </Show>
+        </div>
+      )}
+    </nav>
+  );
+};
+
+export default Navbar;
