@@ -1,4 +1,4 @@
-
+import { prisma } from '@/lib/prisma'
 import {syncCurrentuser} from "@/lib/sync-user";
 import { use } from "react";
 export async function GET() {
