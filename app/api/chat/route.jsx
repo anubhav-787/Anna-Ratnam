@@ -6,7 +6,7 @@ const MODELS = ["gemini-3.1-flash-lite-preview","gemini-3-flash-preview","gemini
 
 export async function POST(req) {
   try {
-    const user = await syncCurrentuser();
+    const user = await syncCurrentuser(); 
     if (!user) {
       return Response.json({ reply: "Unauthorized" }, { status: 401 });
     }
@@ -38,7 +38,7 @@ User question: ${message}
 
     for (const model of MODELS) {
       try {
-        const response = await ai.models.generateContent({
+        const response = await ai.models.generateContent({ 
           model,
           contents: prompt,
         });
