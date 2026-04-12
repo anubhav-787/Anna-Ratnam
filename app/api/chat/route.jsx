@@ -23,7 +23,7 @@ export async function POST(req) {
     if (langPref == "ml") languagepref = "Answer in Simple Malayalam";
 
     const prompt = `
-You are an AI assistant for "Anna Ratnam Project".
+You are an AI assistant for "Anna Ratnam ".
 
 - Help Indian farmers
 - Do not give answer for question out of scope of farming and if someone asks a question out of scope then answer them: I can only answer farming related questions
