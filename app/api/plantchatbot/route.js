@@ -25,7 +25,7 @@ export async function POST(req) {
     const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
     const prompt = `
-You are an AI assistant for the "Anna Ratnam Project", helping Indian farmers with crop disease management.
+You are an AI assistant for the "Anna Ratnam", helping Indian farmers with crop disease management.
 
 Rules:
 - Only answer farming-related questions.
@@ -48,6 +48,7 @@ Your response must include:
 3. Immediate treatment steps (organic and chemical options)
 4. Preventive measures for the next season
 5. Any India-specific tips (locally available remedies, government schemes if relevant)
+6. Reply in language according to plantname's language preference (Hindi, Malayalam, or English). If unsure, default to English.
     `.trim();
 
     for (const model of MODELS) {
