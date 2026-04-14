@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// ← New URL format for HuggingFace Inference Providers
+
 const HF_MODEL = "linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification";
 const HF_API_URL = `https://router.huggingface.co/hf-inference/models/${HF_MODEL}`;
 const HF_TOKEN = process.env.HF_TOKEN;
@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
                 "Content-Type": "application/octet-stream",
             },
             body: buffer,
-            signal: AbortSignal.timeout(60000), // 60 seconds
+            signal: AbortSignal.timeout(60000), 
         });
     } catch (err) {
         console.error("Fetch failed:", err);
@@ -40,8 +40,8 @@ export async function POST(req: NextRequest) {
     }
 
     const rawText = await response.text();
-    console.log("📥 Status:", response.status);
-    console.log("📥 Response:", rawText);
+    console.log(" Status:", response.status);
+    console.log(" Response:", rawText);
 
     if (response.status === 503) {
         return NextResponse.json(
