@@ -157,7 +157,7 @@ recognition.onresult = (event) => {
         <div key={i} className="chat-box py-2">
           <p className='ml-2 bg-blue-500 w-fit p-2 rounded-xl'><b>You:</b> {c.user}</p>
 
-          <div className="bot ml-4 mt-5 bg-emerald-600 p-2 text-white rounded-lg text-left"><button onClick={()=>{if(!speaker){setText(c.bot);speakText();setspeaker(true);}else{stopSpeech();setspeaker(false);}}}>🔊</button>
+          <div className="bot ml-4 mt-5 bg-emerald-600 p-2 text-white rounded-lg text-left"><button className='p-2' onClick={()=>{if(!speaker){setText(c.bot);speakText();setspeaker(true);}else{stopSpeech();setspeaker(false);}}}>🔊</button>
             <ReactMarkdown>{c.bot}</ReactMarkdown>
           </div>
 
