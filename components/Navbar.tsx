@@ -36,7 +36,7 @@ const Navbar = () => {
 
 
           <Show when="signed-out">
-            <SignUpButton forceRedirectUrl="/home">
+            <SignUpButton forceRedirectUrl="/Chat">
               <button className="bg-[#6c47ff] text-white rounded-full text-sm h-10 px-4 cursor-pointer">
                 Sign Up
               </button>
@@ -68,7 +68,7 @@ const Navbar = () => {
 
 
           <Show when="signed-out">
-            <SignUpButton forceRedirectUrl="/home">
+            <SignUpButton forceRedirectUrl="/Chat">
               <button className="bg-[#6c47ff] text-white rounded-full text-sm h-10 px-4 cursor-pointer">
                 Sign Up
               </button>
